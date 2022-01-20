@@ -1,12 +1,12 @@
 # Description
 
-This is a template that I want to be able to use in order to quickly bootstrap a Next.js site. 
+Search for words/clues in the NYT mini crossword! Should support mmultiple types of search:
 
-It is built on top of create-next-app, with my preferred file structure, default styles, etc.
+- Search for individual words, as solutions in the grid
+- Search for individual words in the clues
+- Search for multiple words in an answer
+- Search for multiple words in a clue
 
-## Notable Features
+# Motivation
 
-- Common default styles/utility classes that I use
-- File structure with `/components` and `/utils` folders
-- Dummy navigation/routing set up out of the box
-- built-in `<Head>` component with meta/seo stuffs
+I took a "Search Engines" class one semester, but dropped it halfway through. This is my penance. 
