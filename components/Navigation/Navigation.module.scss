@@ -1,0 +1,21 @@
+@import '../../styles/variables.scss';
+
+.nav {
+
+    max-height: $nav-height;
+    margin-bottom: $space-md;
+
+    ul {
+        padding: 0;
+    }
+
+    li {
+        text-decoration: none;
+        display: inline-block;
+        margin-right: 20px;
+    }
+}
+
+.active {
+    color: red;
+}

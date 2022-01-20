@@ -1,0 +1,36 @@
+/*********************\
+/*  Section Sizes    *|
+/*********************/
+// header/footer stuff
+$footer-height: 100px;
+$nav-height: 4rem;
+
+// container widths
+$container-width: 1100px;
+
+/*********************\
+/*     Typography    *|
+/*********************/
+$font-primary: "Poppins";
+
+$text-color-primary: #000000;
+
+// font sizes
+$text-base-size: 1.05em;
+$text-scale-ratio: 1.2; // minor third 😎
+
+$text-xs: calc($text-base-size / ($text-scale-ratio * $text-scale-ratio));
+$text-sm: calc($text-base-size / $text-scale-ratio);
+$text-md: calc($text-base-size * $text-scale-ratio);
+$text-lg: calc($text-base-size * $text-scale-ratio * $text-scale-ratio);
+$text-xl: calc($text-base-size * $text-scale-ratio * $text-scale-ratio * $text-scale-ratio);
+$text-xxl: calc($text-base-size * $text-scale-ratio * $text-scale-ratio * $text-scale-ratio * $text-scale-ratio);
+$text-xxxl: calc($text-base-size * $text-scale-ratio * $text-scale-ratio * $text-scale-ratio * $text-scale-ratio * $text-scale-ratio);
+
+// spacing
+$baseline-space: 1.5em;
+
+$space-sm:   calc($baseline-space/2);
+$space-md:   $baseline-space;
+$space-lg:   calc($baseline-space*2);
+$space-xl:   calc($baseline-space*3);
