@@ -6,6 +6,7 @@ Search for words/clues in the NYT mini crossword! Should support mmultiple types
 - Search for individual words in the clues
 - Search for multiple words in an answer
 - Search for multiple words in a clue
+- partial search?
 
 # Motivation
 

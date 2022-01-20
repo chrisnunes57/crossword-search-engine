@@ -1,14 +1,27 @@
 import DefaultHead from '../components/DefaultHead';
+import Search from '../components/Search';
+import { getWords } from '../lib/reverse-index';
 
-function HomePage() {
+function HomePage(props) {
   return (
     <>
       <DefaultHead />
 
-      <h1>Welcome to Next.js!</h1>
-      <h3>Subtitle</h3>
+      <h3>NYT Mini Crossword Search</h3>
+      <Search words={props.words}/>
     </>
   )
+}
+
+export async function getStaticProps(context) {
+
+  const words = getWords();
+
+  return {
+    props: {
+      "words": words
+    }
+  }
 }
 
 export default HomePage
