@@ -1,0 +1,12 @@
+@import '../../styles/variables.scss';
+
+.results {
+    padding-top: 40px;
+}
+
+.result-item {
+
+    .result-item-title {
+        font-size: $text-md;
+    }
+}

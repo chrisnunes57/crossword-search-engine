@@ -69,3 +69,18 @@ small, .text_small {
     min-height: calc(100vh - $footer-height - $nav-height - 20px);
   }
 }
+
+input {
+
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06);
+  padding: .5em .75em;
+  margin: 0;
+  box-sizing: border-box;
+  width: 300px;
+
+  &:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 3px rgba(66,153,225,.5);
+  }
+}

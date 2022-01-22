@@ -1,12 +1,11 @@
 # Description
 
-Search for words/clues in the NYT mini crossword! Should support mmultiple types of search:
+Search for words/clues in the NYT mini crossword!
 
-- Search for individual words, as solutions in the grid
-- Search for individual words in the clues
-- Search for multiple words in an answer
-- Search for multiple words in a clue
-- partial search?
+TODO:
+
+- Search for multiple words in a clue (multi-word queries)
+- Dispaly relevant clue/answer pair in search result
 
 # Motivation
 
