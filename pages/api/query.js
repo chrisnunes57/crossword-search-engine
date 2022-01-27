@@ -36,7 +36,9 @@ export default function handler(req, res) {
         });
     }
 
-    // @TODO: FIX the bug where the hits multiply with repeated searches
+    // @TODO: FIX the bug where the hits duplicate with repeated searches
+    // why is this happening? is there some caching stuff going on behind the scenes?
+    // or just normal code bug? idk
 
     const result = {
         keys: keys,

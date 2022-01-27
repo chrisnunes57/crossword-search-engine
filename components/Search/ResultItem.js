@@ -14,6 +14,8 @@ function ResultItem({result}) {
         return `${months[parseInt(month, 10) - 1]} ${day}, ${year}`;
     }
 
+    console.log(result)
+
     return (
         <div className={styles["result-item"]}>
             <p className={styles["result-item-title"]}>{formatDate(result["xword"]["print_date"])}</p>
