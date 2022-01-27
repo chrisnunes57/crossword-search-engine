@@ -6,6 +6,10 @@
 
 .result-item {
 
+    .highlight {
+        text-decoration: underline;
+    }
+
     .result-item-title {
         font-size: $text-md;
     }

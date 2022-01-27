@@ -7,13 +7,15 @@ function Search() {
 
     const [matchingPuzzles, updateMatchingPuzzles] = useState([]);
     const [matchingKeys, updateMatchingKeys] = useState([]);
+    const [query, updateQuery] = useState([]);
 
     const handleInput = async (e) => {
 
-        let query = e.target.value;
-        query = query.replaceAll(' ', '');
+        let newQuery = e.target.value;
+        newQuery = newQuery.replaceAll(' ', '');
+        updateQuery(newQuery);
 
-        const resp = await fetch(`${server}/api/query?term=${query.toLowerCase()}`);
+        const resp = await fetch(`${server}/api/query?term=${newQuery.toLowerCase()}`);
         const data = await resp.json();
 
         updateMatchingPuzzles(data["results"] ? data["results"] : []);
@@ -23,7 +25,7 @@ function Search() {
     return (
         <div className={styles.search}>
             <input type="text" placeholder="Enter a query..." onInput={handleInput} />
-            <Results results={matchingPuzzles} keys={matchingKeys} />
+            <Results results={matchingPuzzles} keys={matchingKeys} query={query} />
         </div>
     )
 }

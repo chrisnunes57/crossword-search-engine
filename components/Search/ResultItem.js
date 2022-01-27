@@ -1,6 +1,6 @@
 import styles from './Search.module.scss';
 
-function ResultItem({result}) {
+function ResultItem({result, term}) {
 
     const formatDate = (dateString) => {
 
@@ -14,12 +14,16 @@ function ResultItem({result}) {
         return `${months[parseInt(month, 10) - 1]} ${day}, ${year}`;
     }
 
-    console.log(result)
+    const getHighlightedHtml = (text) => {
+        const lowerText = text.toLowerCase();
+        const index = lowerText.indexOf(term);
+        return `${text.substr(0, index)}<span class="${styles.highlight}">${text.substr(index, term.length)}</span>${text.substr(index + term.length)}`
+    };
 
     return (
         <div className={styles["result-item"]}>
             <p className={styles["result-item-title"]}>{formatDate(result["xword"]["print_date"])}</p>
-            <p>{result["text"]}</p>
+            <p dangerouslySetInnerHTML={{ __html: getHighlightedHtml(result["text"]) }}></p>
             <hr />
         </div>
     )
