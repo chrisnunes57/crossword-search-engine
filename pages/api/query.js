@@ -30,6 +30,15 @@ export default function handler(req, res) {
 
     if (hits) {
         hits.sort((a, b) => {
+            // compare word length first
+            const diffA = Math.abs(a.length - req.query.term.length);
+            const diffB = Math.abs(b.length - req.query.term.length);
+            
+            if (diffB - diffA !== 0) {
+                return diffB - diffA;
+            }
+
+            // then compare date of publish
             const d1 = Date.parse(a["xword"]["print_date"]);
             const d2 = Date.parse(b["xword"]["print_date"]);
             return d2 - d1;
