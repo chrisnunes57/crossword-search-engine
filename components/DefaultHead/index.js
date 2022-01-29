@@ -11,7 +11,7 @@ function DefaultHead() {
             <meta name="author" content="Chris Nunes" />
             <meta name="keywords" content="NYT mini crossword crosswords search engine clue answer" />
 
-            <meta property="og:url" content="https://wordle-stats-delta.vercel.app/" />
+            <meta property="og:url" content="https://crossword-search-engine.vercel.app/" />
             <meta property="og:image" content="/img/screencap.png" />
         </Head>
     )
