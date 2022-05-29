@@ -4,5 +4,8 @@ module.exports = {
     fallback: {
       "fs": false
     },
+  },
+  serverRuntimeConfig: {
+    PROJECT_ROOT: __dirname
   }
 }
