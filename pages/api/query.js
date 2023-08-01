@@ -1,11 +1,31 @@
 import { getReverseIndex } from '../../lib/reverse-index';
+let index = null;
 
-const index = getReverseIndex();
+const validateQuery = (req) => {
+    // we don't check for much here, just that the query exists and has the "term" parameter
+    if (!req.query)
+        return false;
+    else if (!req.query.term && req.query.term !== "")
+        return false;
 
-export default function handler(req, res) {
+    return true;
+}
+
+export default async function handler(req, res) {
+
+    if (!index) {
+        index = await getReverseIndex();
+    }
+
+    if (!validateQuery(req)) {
+        // if the query is bad, we return an empty list
+        res.status(400).send("Bad query");
+        return;
+    }
 
     // hits is the array in which we store all the matching search results
-    let hits = (req.query && req.query.term) ? index[req.query.term] : [];
+    const searchTerm = req.query.term;
+    let hits = (searchTerm >= 3) ? index[req.query.term] : [];
     const keys = [];
 
     if (!hits) {
@@ -14,7 +34,7 @@ export default function handler(req, res) {
 
     // if the search term is long enough, we search for partial matches
     // we need the length limit, bc a single letter query will match thousands of results
-    if (req.query.term.length >= 3) {
+    if (searchTerm.length >= 3) {
         for (const key of Object.keys(index)) {
             if (key.startsWith(req.query.term) && key !== req.query.term) {
                 hits.push(...index[key]);
@@ -54,5 +74,5 @@ export default function handler(req, res) {
         results: hits
     }
 
-    res.status(200).json(result)
+    res.status(200).json(result);
 }
