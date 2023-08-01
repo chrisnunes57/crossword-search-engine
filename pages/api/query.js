@@ -14,6 +14,7 @@ const validateQuery = (req) => {
 export default async function handler(req, res) {
 
     if (!index) {
+        console.log("getting index")
         index = await getReverseIndex();
     }
 
