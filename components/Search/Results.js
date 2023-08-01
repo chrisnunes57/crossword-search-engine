@@ -8,7 +8,7 @@ function Results({keys, results, query}) {
                 return <ResultItem result={result} term={query} key={i} />
             })}
             {results.length < 3 && 
-                (query.length < 3 ? <p> Enter a query longer than 2 letters</p> : <p>No results found</p>)}
+                (query.length < 3 ? <p>Enter a word longer than 2 letters to see when it has appeared in the NYT mini crossword!</p> : <p>No results found</p>)}
         </div>
     )
 }
