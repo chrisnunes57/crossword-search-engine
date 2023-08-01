@@ -13,7 +13,7 @@ const validateQuery = (req) => {
     return true;
 }
 
-export default async function handler(req, res) {
+export default function handler(req, res) {
 
     if (!index) {
         // build index, must be first query
