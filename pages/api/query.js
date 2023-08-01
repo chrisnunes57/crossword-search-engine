@@ -29,7 +29,7 @@ export default function handler(req, res) {
 
     // hits is the array in which we store all the matching search results
     const searchTerm = req.query.term;
-    let hits = (searchTerm >= 3) ? index[req.query.term] : [];
+    let hits = (searchTerm.length >= 3 && searchTerm in index) ? index[searchTerm] : []; 
     const keys = [];
 
     if (!hits) {
@@ -68,10 +68,6 @@ export default function handler(req, res) {
             return d2 - d1;
         });
     }
-
-    // @TODO: FIX the bug where the hits duplicate with repeated searches
-    // why is this happening? is there some caching stuff going on behind the scenes?
-    // or just normal code bug? idk
 
     const result = {
         keys: keys,
