@@ -3,6 +3,7 @@ import path from "path";
 
 // workaround, use path.resolve to force nextjs to bundle our data
 const DATA_FILE = path.join(process.cwd(), "lib/xwordData.json");
+console.log("data file resolved path: " + DATA_FILE);
 let index = getReverseIndex(DATA_FILE);
 
 const validateQuery = (req) => {
