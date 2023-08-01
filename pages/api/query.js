@@ -1,7 +1,8 @@
 import { getReverseIndex } from '../../lib/reverse-index';
+import path from "path";
 
 // workaround, use path.resolve to force nextjs to bundle our data
-const DATA_FILE = require("../../lib/data.json");
+const DATA_FILE = path.join(process.cwd(), "lib/xwordData.json");
 let index = getReverseIndex(DATA_FILE);
 
 const validateQuery = (req) => {
