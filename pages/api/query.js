@@ -1,5 +1,9 @@
 import { getReverseIndex } from '../../lib/reverse-index';
-let index = null;
+import path from "path";
+
+// workaround, use path.resolve to force nextjs to bundle our data
+const DATA_PATH = path.resolve("./data/xword_data.json");
+let index = getReverseIndex(DATA_PATH);
 
 const validateQuery = (req) => {
     // we don't check for much here, just that the query exists and has the "term" parameter
@@ -12,11 +16,6 @@ const validateQuery = (req) => {
 }
 
 export default async function handler(req, res) {
-
-    if (!index) {
-        console.log("getting index")
-        index = await getReverseIndex();
-    }
 
     if (!validateQuery(req)) {
         // if the query is bad, we return an empty list

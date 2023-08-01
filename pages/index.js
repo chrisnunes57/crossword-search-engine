@@ -1,7 +1,8 @@
 import DefaultHead from '../components/DefaultHead';
 import Search from '../components/Search';
 
-function HomePage() {
+
+export default function HomePage(props) {
   return (
     <>
       <DefaultHead />
@@ -11,5 +12,3 @@ function HomePage() {
     </>
   )
 }
-
-export default HomePage
